@@ -1,0 +1,35 @@
+#search_column_artist_1{
+	margin-left:12px;
+}
+
+.search_column_result{
+	margin-left:10px;
+}
+
+.search_result_description{
+	margin-left:5px;
+}
+
+.artist_search_result_row{
+	margin-left:5px;
+	width:750px;
+}
+
+#attendance{
+	margin-left:0px;
+	padding-left:0;
+	padding-right:0;
+}
+
+#gross{
+	padding-right:0;
+}
+
+#price{
+	margin-left:0;
+	margin-right:0;
+}
+
+#location_box{
+	margin-right:0;
+}
