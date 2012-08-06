@@ -130,119 +130,11 @@ if(empty($action)){
 	$action='report_history';
 }
 
-if($action==buy_credit){
-	header("Location:https://secure.tourintel.com/account_tools?action=buy_credit&m=".$encoded_member_id);
-		exit;	
-}
 
 $smarty->assign('action',$action);
 
 
 $where_clause = "WHERE MID = '".$member_id."'";
-
-$available_credit = $db->select_single_value("xebura_MEMBERS","TI_CREDIT_BALANCE","$where_clause");
-$smarty->assign('available_credit',$available_credit);
-
-
-$rn_mac = $db->select_single_value("xebura_MEMBERS","RN_MAC","$where_clause");
-$smarty->assign('rn_mac',$rn_mac);
-
-$smarty->assign('available_credit',$available_credit);
-
-//echo "<br />";
-
-//echo "Credit Balance: $available_credit";
-
-// GET SALES
-if($action=='admin'){
-
-$salestodate = $db->query("SELECT SUM(AL.AF_SUBLEVEL_PRICE) AS SALES,SUM(AL.AF_SUBLEVEL_TI_CREDITS) AS CREDITS
-FROM xebura_TI_CREDIT_PURCHASE_HISTORY AS AP
-INNER JOIN xebura_MEMBERS AS AM ON AP.AF_TI_CREDIT_PURCHASE_MID = AM.MID
-INNER JOIN xebura_TI_SALES_REPS AS AR ON AR.AF_TI_REP_ID = AM.REP_ID
-INNER JOIN xebura_SUBLEVEL AS AL ON AL.AF_RN_PRODID = AP.AF_TI_CREDIT_PURCHASE_PRODUCT_ID 
-AND AM.MID <> '1'
-AND AF_TI_CREDIT_PURCHASE_PRODUCT_ID <> '0'
-AND AF_TI_CREDIT_PURCHASE_PRODUCT_ID <> '99999'
-ORDER BY SALES DESC");
-
-while ( list ($amtsales,$scredits) = $db->fetchQueryRow($salestodate) )
-  {
-							$salestodate = number_format($amtsales,2);	
-							$totcredits = $scredits;
-  }
-
-$acc2date = $db->select_single_value("xebura_MEMBERS","COUNT(*)","WHERE USERNAME <> ''");
-
-$smarty->assign("salestodate", $salestodate);	
-$smarty->assign("totcredits", $totcredits);	
-$smarty->assign("acc2date", $acc2date);	
-	
-$sql = "SELECT COUNT(*),AR.AF_TI_REP_CONTACTNAME,SUM(AL.AF_SUBLEVEL_TI_CREDITS) AS CREDITS,SUM(AL.AF_SUBLEVEL_PRICE) AS SALES
-FROM xebura_TI_CREDIT_PURCHASE_HISTORY AS AP
-INNER JOIN xebura_MEMBERS AS AM ON AP.AF_TI_CREDIT_PURCHASE_MID = AM.MID
-INNER JOIN xebura_TI_SALES_REPS AS AR ON AR.AF_TI_REP_ID = AM.REP_ID
-INNER JOIN xebura_SUBLEVEL AS AL ON AL.AF_RN_PRODID = AP.AF_TI_CREDIT_PURCHASE_PRODUCT_ID 
-AND AM.MID <> '1'
-AND AF_TI_CREDIT_PURCHASE_PRODUCT_ID <> '0'
-AND AF_TI_CREDIT_PURCHASE_PRODUCT_ID <> '99999'
-GROUP BY AM.REP_ID
-ORDER BY SALES DESC";	
-
-$salesbyagent=array();
-$isa=0;
-$db->query($sql);
-$result_search = $db->query($sql);
-
-if($db->getNumRows($result_search)>0)
-{
-while ( list ($numsales,$repname,$credits,$amount) = $db->fetchQueryRow($result_search) )
-  {
-							$tem['numsales'] = $numsales;									  
-							$tem['repname'] = $repname;
-							$tem['tcredits'] = $credits;
-							$tem['amount'] =  $amount;
-
-	
-		$salesbyagent[$isa++]=$tem;
-	}
-	
-}
-$smarty->assign("salesbyagent", $salesbyagent);
-
-// We can use this later to implement sales from last 30 days -- after there have been sales greater than 30 da
-$ddate = strtotime("-1 Month");
-$date = date('Y-m-d',$ddate);
-
-
-
-$sql = "SELECT COUNT(*) AS ACCOUNTS,AR.AF_TI_REP_CONTACTNAME FROM xebura_MEMBERS AS AM
-INNER JOIN xebura_TI_SALES_REPS AS AR on AR.AF_TI_REP_ID = AM.REP_ID
-WHERE USERNAME <> ''
-GROUP BY AF_TI_REP_ID
-ORDER BY ACCOUNTS DESC";	
-
-$subagent=array();
-$isa=0;
-$db->query($sql);
-$result_search = $db->query($sql);
-
-if($db->getNumRows($result_search)>0)
-{
-while ( list ($numacts,$repname) = $db->fetchQueryRow($result_search) )
-  {
-							$tem['numacts'] = $numacts;									  
-							$tem['repname'] = $repname;
-
-	
-		$subagent[$isa++]=$tem;
-	}
-	
-}
-}
-$smarty->assign("subagent", $subagent);
-
-
 
 
 /// Get Report History
@@ -294,46 +186,12 @@ switch($status){
 							$tem['name'] = $name;		
 							$tem['sent'] = $sent;
 							$tem['status'] = $status_txt;
-//							$tem['ip'] = $ip;
-							
-//							if($category==1){
-//							$tem['link'] = "report_artist?artist=".$id;
-//							}elseif($category==2){
-//							$tem['link'] = "report_venue?venue=".$id;
-//							}elseif($category==3){
-//							$tem['link'] = "compare_artist?chart=avg_gross&artist1=".$id."&artist2=".$id2."&artist3=".$id3."&artist4=".$id4."&end=136&start=1";
-//							}elseif($category==4){
-//							$tem['link'] =  "compare_venue?chart=avg_gross&venue1=".$id."&venue2=".$id2."&venue3=".$id3."&venue4=".$id4."&end=136&start=1";
-//							}elseif($category==5){
-//							$tem['link'] = "make_pdf?artist=".$id;
-//							}elseif($category==6){
-//							$tem['link'] = "make_pdf?venue=".$id;
-//							}
-		//echo "$bandname <br>";
-	
 		$search_short[$isa++]=$tem;
 	}
 	
 }
 }
 $smarty->assign("search_short", $search_short);
-//print_r($search_short);
-
-
-//print_r($search_short);
-
-//echo "<br />";
-
-
-
-/// Get Credit Purchase History
-if($action=='purchase_history'|| $action=='admin'){
-$sql = "SELECT AF_TI_CREDIT_PURCHASE_TIMESTAMP AS DATE,
-AF_SUBLEVEL_NAME AS PRODUCT,
-AF_SUBLEVEL_PRICE AS PRICE
-FROM xebura_TI_CREDIT_PURCHASE_HISTORY
-INNER JOIN xebura_SUBLEVEL ON AF_TI_CREDIT_PURCHASE_PRODUCT_ID = AF_RN_PRODID
-WHERE AF_TI_CREDIT_PURCHASE_MID = '".$member_id."'";	
 
 //echo "<br />";
 $pur_short=array();
