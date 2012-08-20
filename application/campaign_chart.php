@@ -97,6 +97,7 @@ $offer[$i++]=$tem;
 }
 }
 
+//broken
 //$json_data = json_encode($offer);
 //echo $json_data;
 echo '] }';

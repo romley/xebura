@@ -109,8 +109,20 @@ $total_items = $db->getNumRows($result);
 
 
 
-//Pull the Amazon Credentials!!!!! TODO
-$ses = new SimpleEmailService('AKIAIQQE2DZLPIWS26QQ', 'j40HKPqSSs/5HDD3gKqLovDwnxbdF0aW113pQIie'); 
+// get the amazon credentials for the campaign creator
+$res = $db->query("SELECT
+XE_AMZ_ACCESS_KEY AS ACCESS_KEY,
+XE_AMZ_SECRET_KEY AS SECRET_KEY
+FROM XEBURA_AMAZON_CREDENTIALS
+WHERE XE_AMZ_MID = '".$mid."'");
+	$row = $db->fetchQueryArray($res);
+	$amz_akey = $row['ACCESS_KEY'];
+	$amz_skey = $row['SECRET_KEY'];
+
+// intialize ses class
+$ses = new SimpleEmailService($amz_akey, $amz_skey); 
+
+
 
 $approved_senders = $ses->listVerifiedEmailAddresses();
 

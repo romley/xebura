@@ -35,8 +35,7 @@
 //               www.xebura.com
 //               j@xebura.com
 //============================================================+
-// box office chart script
-// jlr on 24-04-2010
+// email office chart script
 // This script will create an xml file to feed the chart
 require 'include/includes.php';
 

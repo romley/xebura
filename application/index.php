@@ -86,39 +86,18 @@ if(isset($_REQUEST['username']) && trim($_REQUEST['username'])!="")
 		$db->update("xebura_MEMBERS",$lastlogin," where MID='".$mid."' ");
 		
 		
-		if($aid=='1')	{ 
-		$_SESSION['User_Account_Id']=$db->select_single_value("xebura_ARTIST","AF_ARTIST_ID"," where AF_ARTIST_MID='".$mid."' ");		
-		}
-		else if($aid=='2')	{
-			$_SESSION['User_Account_Id']=$db->select_single_value("xebura_MANAGER","AF_MANAGER_ID"," where AF_MANAGER_MID='".$mid."' ");				
-		}
-		else if($aid=='3')	{
-			$_SESSION['User_Account_Id']=$db->select_single_value("xebura_AGENT","AF_AGENT_ID"," where AF_AGENT_MID='".$mid."' ");						
-		}
-		else if($aid=='4')	{
-			$_SESSION['User_Account_Id']=$db->select_single_value("xebura_AGENCY","AF_AGENCY_ID"," where AF_AGENCY_MID='".$mid."'");						
-		}
-		else if($aid=='5')	{
-			header("location:pageunderconst.php"); 		
-		}
-		else if($aid=='6')	{
-			$_SESSION['User_Account_Id']=$db->select_single_value("xebura_PROMOTER","AF_PROMOTER_ID"," where AF_PROMOTER_MID='".$mid."'");						
-		}
-		else if($aid=='7')	{   
-			$_SESSION['User_Account_Id']=$db->select_single_value("xebura_VENUE","AF_VENUE_ID"," where AF_VENUE_MID='".$mid."' ");	
-		}
-		else if($aid=='8')	{
-			$_SESSION['User_Account_Id']=$db->select_single_value("xebura_BUYER","AF_BUYER_ID"," where AF_BUYER_MID='".$mid."'");						
-		}
+		
 		include "online.php";
 		$_SESSION['Nav_Menu']="Home";
-	        $encoded_id = encode($mid);	
+	        $encoded_id = encode($mid);
+	        //if account info is flagged for update or payment method is declined, etc.	
 		if($row['NEED_UPDATE'] == 1)
 		{
-			$page = "https://af1.xebura.com/sf_response_handler.php?MID=$encoded_id&sid=atele";
+			$page = "https://somepage";
                 }
 		else if($row['IS_TEMP_PASSWORD'] == 1)
 		{
+		// if password change is required 
 			$_SESSION['Nav_Submenu'] = "ChangePassword";
 			//unset($_SESSION['Nav_Submenu']);	
 			//$_SESSION['Redirected_To_Ch'] = 1;		
@@ -126,6 +105,7 @@ if(isset($_REQUEST['username']) && trim($_REQUEST['username'])!="")
 		}
 		else if($row['LOGIN_STATUS'] == 0)
 		{
+		// if account is missing contact details
 			$_SESSION['Nav_Submenu'] = "ProfileManager";
 			//unset($_SESSION['Nav_Submenu']);
 			//$_SESSION['Redirected_To_PF'] = 1;
@@ -180,38 +160,7 @@ else if(isset($_GET['m']) && isset($_GET['id']))
 					$db->update("xebura_MEMBERS",$lastlogin," where MID='".$mid."' ");
 					
 					
-					if($aid=='1')	
-					{ 
-						$_SESSION['User_Account_Id']=$db->select_single_value("xebura_ARTIST","AF_ARTIST_ID"," where AF_ARTIST_MID='".$mid."' ");		
-					}
-					else if($aid=='2')	
-					{
-						$_SESSION['User_Account_Id']=$db->select_single_value("xebura_MANAGER","AF_MANAGER_ID"," where AF_MANAGER_MID='".$mid."' ");				
-					}
-					else if($aid=='3')	
-					{
-						$_SESSION['User_Account_Id']=$db->select_single_value("xebura_AGENT","AF_AGENT_ID"," where AF_AGENT_MID='".$mid."' ");						
-					}
-					else if($aid=='4')	
-					{
-						$_SESSION['User_Account_Id']=$db->select_single_value("xebura_AGENCY","AF_AGENCY_ID"," where AF_AGENCY_MID='".$mid."'");						
-					}
-					else if($aid=='5')	
-					{
-						header("location:pageunderconst.php"); 		
-					}
-					else if($aid=='6')	
-					{
-						$_SESSION['User_Account_Id']=$db->select_single_value("xebura_PROMOTER","AF_PROMOTER_ID"," where AF_PROMOTER_MID='".$mid."'");						
-					}
-					else if($aid=='7')	
-					{   
-						$_SESSION['User_Account_Id']=$db->select_single_value("xebura_VENUE","AF_VENUE_ID"," where AF_VENUE_MID='".$mid."' ");	
-					}
-					else if($aid=='8')	
-					{
-						$_SESSION['User_Account_Id']=$db->select_single_value("xebura_BUYER","AF_BUYER_ID"," where AF_BUYER_MID='".$mid."'");						
-					}
+					
 					include "online.php";
 					$_SESSION['Nav_Menu']="Mail";			
 				
@@ -286,6 +235,7 @@ if(isset($_REQUEST['Msg']) && $_REQUEST['Msg']!='')
 <body>
 
 		<script>
+		/* bad IE! */
    if ($.browser.msie) {
 /*    alert("Internet Explorer is not a fully supported browser. For the best experience, please use a modern browser such as Firefox, Safari or Chrome.");
 */
@@ -296,43 +246,7 @@ $("<div class='nocufon browser_warning'>Please use a modern browser with HTML5 s
 		<div class="login">
         <div class="bug"><img src="images/logo.png" height="71" alt="Xebura.com | Customer Log-in" /></div>
 			<form action="index.php" method="post" name="form">
-		    <p class="lerror"><?PHP
-//============================================================+
-// Version     : 1.0
-// License     : GNU GPL (http://www.gnu.org/licenses/gpl-3.0.html)
-// 	----------------------------------------------------------------------------
-//  Copyright (C) 2010-2012 Jonathan Romley - Xebura Corporation
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-// 	This program is distributed in the hope that it will be useful,
-// 	but WITHOUT ANY WARRANTY; without even the implied warranty of
-// 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// 	GNU Lesser General Public License for more details.
-//
-// 	You should have received a copy of the GNU Lesser General Public License
-// 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
-// 	See LICENSE.TXT file for more information.
-//  ----------------------------------------------------------------------------
-//
-// Description : PHP-based multitenant marketing automation software
-//               using Amazon Simple Email Service and Twilio
-//
-// Author: Jonathan Romley
-//
-// (c) Copyright:
-//               Jonathan Romley
-//               Xebura Corporation
-//               256 South Robertson Blvd
-//               Beverly Hills, CA 90211
-//               USA
-//               www.xebura.com
-//               j@xebura.com
-//============================================================+ if(isset($msg)) { echo $msg; }?></p>
+		    <p class="lerror"><?PHP if(isset($msg)) { echo $msg; }?></p>
 				<ul class="clearfix">
 				  <li class="left">
 					<label>User Name</label>

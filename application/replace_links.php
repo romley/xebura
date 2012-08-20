@@ -40,15 +40,16 @@ require 'class/dbclass.php';
 include_once 'include/config.php';
 date_default_timezone_set('America/Los_Angeles');
 $db = new mysqldb();
-$cid = '7';
-$mid = '1';
-$eid = '1';
+//$cid = '7';
+//$mid = '1';
+//$eid = '1';
 $now = date('Y-m-d G:i:s',(strtotime("now")));
-$msg_html = '<p>Here is my test message. I am going to show you some links....</p>
-<p>Here is <a href="http://www.google.com/">Google</a></p>
-<p>and <a href="http://yahoo.com">Yahoo</a></p>
-<p>and this is an email address - <a href="mailto:jromley@gmail.com">jromley@gmail.com</a></p>
-<p>and a link to a <a href="http://www.seagate.com/content/pdf/whitepaper/D2c_tech_paper_intc-stx_sata_ncq.pdf">PDF</a>... </p>';
+// should be dynamic, what happened here? jlr 19-08-12 -- needs to be fixed.
+//$msg_html = '<p>Here is my test message. I am going to show you some links....</p>
+//<p>Here is <a href="http://www.google.com/">Google</a></p>
+//<p>and <a href="http://yahoo.com">Yahoo</a></p>
+//<p>and this is an email address - <a href="mailto:j@xebura.com">j@xebura.com</a></p>
+//<p>and a link to a <a href="http://www.seagate.com/content/pdf/whitepaper/D2c_tech_paper_intc-stx_sata_ncq.pdf">PDF</a>... </p>';
 
 
 // URL REPLACEMENT PART 1
