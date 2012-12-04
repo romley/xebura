@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 // email office chart script
 // This script will create an xml file to feed the chart

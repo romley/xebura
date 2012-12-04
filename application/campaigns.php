@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ 
 /* This tells not to include the sidemenu page in the includes page. */
 $hide_side_menu = false;

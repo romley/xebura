@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 DEFINE('_WELCOME_NOTE','Welcome to xebura.');
 DEFINE('_SYS_ALERT','SYSTEM ALERTS');

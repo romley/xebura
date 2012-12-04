@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 /**
  * Project:     Smarty: the PHP compiling template engine
@@ -250,7 +250,7 @@ class Smarty
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ... ?>" tags in templates.
      * possible values:
      * <ul>

@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 
 /**
@@ -361,7 +361,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ echo \''.str_replace("'", "\'", $sp_match[1][$curr_sp]).'\'; ?>'."\n", $text_blocks[$curr_tb]);
                     } else if ($this->php_handling == SMARTY_PHP_QUOTE) {
                         /* quote php tags */
@@ -405,7 +405,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ echo \'\\1\'?>'."\n", $sp_match[1][$curr_sp]);
                         $text_blocks[$curr_tb] = str_replace('%%%SMARTYSP'.$curr_sp.'%%%', $sp_match[1][$curr_sp], $text_blocks[$curr_tb]);
                     }
@@ -479,7 +479,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ echo '" . strtr($text_blocks[$j], array("'"=>"\'", "\\"=>"\\\\")) . "'; ?>";
                     if ($compiled_tags[$j] == '{/strip}') {
                         $compiled_tags[$j] = "\n"; /* slurped by php, but necessary
@@ -543,7 +543,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ \$this->_cache_serials['".$this->_cache_include."'] = '".$this->_cache_serial."'; ?>" . $compiled_content;
         }
 
@@ -599,7 +599,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ /* Smarty version ".$this->_version.", created on ".strftime("%Y-%m-%d %H:%M:%S")."\n";
         $template_header .= "         compiled from ".strtr(urlencode($resource_name), array('%2F'=>'/', '%3A'=>':'))." */ ?>\n";
 
@@ -648,7 +648,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');\nsmarty_core_load_plugins($_plugins_params, \$this); ?>\n";
             $template_header .= $plugins_code;
             $this->_plugin_info = array();
@@ -690,7 +690,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ require_once(SMARTY_CORE_DIR . 'core.assign_smarty_interface.php');\nsmarty_core_assign_smarty_interface(null, \$this); ?>\n";
             $this->_init_smarty_vars = false;
         }
@@ -760,7 +760,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ echo $_return; ?>" . $this->_additional_newline;
         }
 
@@ -820,7 +820,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ else: ?>';
 
             case 'elseif':
@@ -867,7 +867,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ endif; ?>';
 
             case 'capture':
@@ -922,7 +922,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ endfor; else: ?>";
                 break;
 
@@ -963,7 +963,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ endif; ?>";
                 else
                     return "<?PHP
@@ -1000,7 +1000,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ endfor; endif; ?>";
 
             case 'foreach':
@@ -1044,7 +1044,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ endforeach; else: ?>";
 
             case '/foreach':
@@ -1084,7 +1084,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ endif; unset(\$_from); ?>";
                 else
                     return "<?PHP
@@ -1121,7 +1121,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ endforeach; endif; unset(\$_from); ?>";
                 break;
 
@@ -1187,7 +1187,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ echo '" . strtr($block[2], array("'"=>"\'", "\\"=>"\\\\")) . "'; ?>" . $this->_additional_newline;
 
                     case 4: /* php */
@@ -1229,7 +1229,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ' . $block[3] .' ?>';
                 }
                 break;
@@ -1340,7 +1340,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ' . $this->_push_cacheable_state('compiler', $tag_command)
                                    . $output
                                    . $this->_pop_cacheable_state('compiler', $tag_command) . ' ?>';
@@ -1461,7 +1461,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ' . $this->_push_cacheable_state('block', $tag_command);
             $attrs = $this->_parse_attrs($tag_args);
             $_cache_attrs='';
@@ -1504,7 +1504,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ $_block_content = ob_get_contents(); ob_end_clean(); ';
             $_out_tag_text = $this->_compile_plugin_call('block', $tag_command).'($this->_tag_stack[count($this->_tag_stack)-1][1], $_block_content, $this, $_block_repeat)';
             if ($tag_modifier != '') {
@@ -1618,7 +1618,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ' . $_cacheable_state . $_cache_attrs . 'echo ' . $output . ';'
                 . $this->_pop_cacheable_state('function', $tag_command) . "?>" . $this->_additional_newline;
         }
@@ -1751,7 +1751,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ' . $prefix . $output . $postfix . "?>" . $newline;
     }
 
@@ -1820,7 +1820,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ require_once(SMARTY_CORE_DIR . 'core.run_insert_handler.php');\necho smarty_core_run_insert_handler($_params, \$this); ?>" . $this->_additional_newline;
     }
 
@@ -1886,7 +1886,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ';
 
         if (isset($assign_var)) {
@@ -1974,7 +1974,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ require_once(SMARTY_CORE_DIR . 'core.smarty_include_php.php');\nsmarty_core_smarty_include_php($_params, \$this); ?>" . $this->_additional_newline;
     }
 
@@ -2024,7 +2024,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ';
         $section_name = $attrs['name'];
         if (empty($section_name)) {
@@ -2194,7 +2194,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ';
         $output .= "\$_from = $from; if (!is_array(\$_from) && !is_object(\$_from)) { settype(\$_from, 'array'); }";
         if (isset($name)) {
@@ -2269,7 +2269,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ ob_start(); ?>";
             $this->_capture_stack[] = array($buffer, $assign);
         } else {
@@ -2308,7 +2308,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ \$this->_smarty_vars['capture'][$buffer] = ob_get_contents(); ";
             if (isset($assign)) {
                 $output .= " \$this->assign($assign, ob_get_contents());";
@@ -2519,7 +2519,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ elseif ('.implode(' ', $tokens).'): ?>';
         else
             return '<?PHP
@@ -2556,7 +2556,7 @@ class Smarty_Compiler extends Smarty {
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+ if ('.implode(' ', $tokens).'): ?>';
     }
 

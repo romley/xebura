@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 /* If the session exists for a user and it accidently comes to the index page
 then first it unsets the message on session. */

@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 $smarty->assign("welcomenote",_WELCOME_NOTE);
 $smarty->assign("sysalert",_SYS_ALERT);

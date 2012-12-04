@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 error_reporting (E_ALL ^ E_NOTICE);
 // This is a PHP demo for collecting SMS jobs from XEBURA and sending them out via TWILIO

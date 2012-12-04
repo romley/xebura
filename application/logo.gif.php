@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 // this script tracks email opens
 // we should use some htaccess magic so that we can rewrite a url like xebuura.com/images/123campaignId/123emailId/logo.jpg

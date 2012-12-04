@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 // script to get links, add them to the link table and replace them
 require 'class/dbclass.php';
@@ -47,7 +47,7 @@ $now = date('Y-m-d G:i:s',(strtotime("now")));
 //$msg_html = '<p>Here is my test message. I am going to show you some links....</p>
 //<p>Here is <a href="http://www.google.com/">Google</a></p>
 //<p>and <a href="http://yahoo.com">Yahoo</a></p>
-//<p>and this is an email address - <a href="mailto:j@xebura.com">j@xebura.com</a></p>
+//<p>and this is an email address - <a href="mailto:hello@xebura.com">hello@xebura.com</a></p>
 //<p>and a link to a <a href="http://www.seagate.com/content/pdf/whitepaper/D2c_tech_paper_intc-stx_sata_ncq.pdf">PDF</a>... </p>';
 
 

@@ -32,7 +32,7 @@
 //               Beverly Hills, CA 90211
 //               USA
 //               www.xebura.com
-//               j@xebura.com
+//               hello@xebura.com
 //============================================================+
 define('DB_SERVER','X.rds.amazonaws.com');
 define('DB_SERVER_USERNAME','X');
