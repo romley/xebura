@@ -3,7 +3,7 @@
 // Version     : 1.0
 // License     : GNU GPL (http://www.gnu.org/licenses/gpl-3.0.html)
 // 	----------------------------------------------------------------------------
-//  Copyright (C) 2010-2012 Jonathan Romley - Xebura Corporation
+//  Copyright (C) 2010-2012  Xebura Corporation
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -21,13 +21,12 @@
 // 	See LICENSE.TXT file for more information.
 //  ----------------------------------------------------------------------------
 //
-// Description : PHP-based multitenant marketing automation software
-//               using Amazon Simple Email Service and Twilio
+// Description : Cloud marketing automation
+//               with Amazon Simple Email Service and Twilio
 //
-// Author: Jonathan Romley
+// Author: Xebura Corporation
 //
 // (c) Copyright:
-//               Jonathan Romley
 //               Xebura Corporation
 //               256 South Robertson Blvd
 //               Beverly Hills, CA 90211
@@ -222,7 +221,7 @@ class Smarty
 // Version     : 1.0
 // License     : GNU GPL (http://www.gnu.org/licenses/gpl-3.0.html)
 // 	----------------------------------------------------------------------------
-//  Copyright (C) 2010-2012 Jonathan Romley - Xebura Corporation
+//  Copyright (C) 2010-2012  Xebura Corporation
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -240,13 +239,12 @@ class Smarty
 // 	See LICENSE.TXT file for more information.
 //  ----------------------------------------------------------------------------
 //
-// Description : PHP-based multitenant marketing automation software
-//               using Amazon Simple Email Service and Twilio
+// Description : Cloud marketing automation
+//               with Amazon Simple Email Service and Twilio
 //
-// Author: Jonathan Romley
+// Author: Xebura Corporation
 //
 // (c) Copyright:
-//               Jonathan Romley
 //               Xebura Corporation
 //               256 South Robertson Blvd
 //               Beverly Hills, CA 90211
